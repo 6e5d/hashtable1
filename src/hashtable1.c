@@ -10,7 +10,7 @@
 // type: [uint64_t] [size_key] [size_val]
 // content: [hash] [key data] [val data]
 
-void hashtable1_new(uint32_t size_key, uint32_t size_val, Hashtable1* result) {
+void hashtable1_new(Hashtable1* result, uint32_t size_key, uint32_t size_val) {
 	uint32_t size_entry = size_key + size_val + 8;
 	void* buckets = calloc(1, size_entry);
 	assert(buckets != NULL);

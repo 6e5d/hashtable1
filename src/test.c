@@ -5,7 +5,7 @@
 
 int main() {
 	Hashtable1 table;
-	hashtable1_new(sizeof(int), sizeof(long), &table);
+	hashtable1_new(&table, sizeof(int), sizeof(long));
 	int k1 = 5; long v1 = 101;
 	hashtable1_insert(&table, &k1, &v1);
 	int k2 = 7; long v2 = 102;
