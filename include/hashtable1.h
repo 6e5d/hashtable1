@@ -1,3 +1,7 @@
+#ifndef INCLUDEGUARD_HASHTABLE1_HASHTABLE1H
+#define INCLUDEGUARD_HASHTABLE1_HASHTABLE1H
+
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 
@@ -10,9 +14,12 @@ typedef struct {
 	void* buckets;
 } Hashtable1;
 
-void hashtable1_new(Hashtable1* result, uint32_t size_key, uint32_t size_val);
+void hashtable1_init(Hashtable1* result, uint32_t size_key, uint32_t size_val);
 void hashtable1_double(Hashtable1* table);
 uint8_t hashtable1_insert(Hashtable1* table, void* key, void* value);
-uint8_t hashtable1_get(Hashtable1* table, void* key, void** result);
+bool hashtable1_get(Hashtable1* table, void* key, void** result);
+uint8_t hashtable1_contains(Hashtable1* table, void* key);
 uint8_t hashtable1_remove(Hashtable1* table, void* key);
-void hashtable1_destroy(Hashtable1* result);
+void hashtable1_deinit(Hashtable1* result);
+
+#endif
