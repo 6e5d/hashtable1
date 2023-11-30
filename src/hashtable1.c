@@ -101,6 +101,7 @@ void hashtable1_double(Hashtable1* table) {
 	for (size_t i = 0; i < old_len; i += 1, p += table->size_entry) {
 		hashtable1_insert2(table, p + 8, p + table->size_key + 8);
 	}
+	free(old_buckets);
 }
 
 // 0=ok, 1=overwrite
