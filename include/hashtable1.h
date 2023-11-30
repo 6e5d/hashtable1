@@ -1,9 +1,5 @@
-#ifndef INCLUDEGUARD_HASHTABLE1_HASHTABLE1H
-#define INCLUDEGUARD_HASHTABLE1_HASHTABLE1H
-
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
+#ifndef INCLUDEGUARD_HASHTABLE1
+#define INCLUDEGUARD_HASHTABLE1
 
 typedef struct {
 	uint32_t size_key;
