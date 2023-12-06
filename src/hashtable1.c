@@ -73,6 +73,15 @@ uint8_t hashtable1_contains(Hashtable1* table, void* key) {
 	return ret;
 }
 
+void hashtable1_debug(Hashtable1* table) {
+	fprintf(stderr, "skey:%u, sval:%u, len:%zu, shift:%hhu\n",
+		table->size_key,
+		table->size_val,
+		table->elements,
+		table->bitshift
+	);
+}
+
 // insert without doubling
 static uint8_t hashtable1_insert2(Hashtable1* table, void* key, void* value) {
 	uint8_t* p;
@@ -107,7 +116,7 @@ void hashtable1_double(Hashtable1* table) {
 // 0=ok, 1=overwrite
 uint8_t hashtable1_insert(Hashtable1* table, void* key, void* value) {
 	size_t len = 1 << table->bitshift;
-	if (table->elements * 2 >= len) {
+	if (table->elements * 2 + 1 >= len) {
 		hashtable1_double(table);
 	}
 	hashtable1_insert2(table, key, value);
