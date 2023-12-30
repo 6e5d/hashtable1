@@ -1,6 +1,3 @@
-#ifndef INCLUDEGUARD_HASHTABLE1
-#define INCLUDEGUARD_HASHTABLE1
-
 typedef struct {
 	uint32_t size_key;
 	uint32_t size_val;
@@ -18,5 +15,3 @@ bool hashtable1(get)(Hashtable1()* table, void* key, void** result);
 uint8_t hashtable1(contains)(Hashtable1()* table, void* key);
 uint8_t hashtable1(remove)(Hashtable1()* table, void* key);
 void hashtable1(deinit)(Hashtable1()* result);
-
-#endif

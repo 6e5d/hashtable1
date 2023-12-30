@@ -1,5 +1,6 @@
 #include "../include/hashtable1.h"
-#define prime 0xcbf29ce484222325
+
+const static uint64_t prime = 0xcbf29ce484222325;
 
 static uint64_t fnv1a(uint8_t* p, size_t size) {
 	uint64_t hash = 0;
